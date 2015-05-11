@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MarkView Sample</string>
+
+    <string name="max">Max</string>
+    <string name="current_mark">Current mark</string>
+</resources>

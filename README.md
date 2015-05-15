@@ -127,6 +127,8 @@ An array keeps all the colors. Ideally, one for every supported mark (satisfying
 src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
 
+(Apk file available in the <a href="https://github.com/xiprox/MarkView/releases">releases tab</a>.)
+
 #License
 ```
 Copyright (C) 2015 Ihsan Isik

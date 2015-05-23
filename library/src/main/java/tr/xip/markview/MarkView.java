@@ -47,7 +47,7 @@ public class MarkView extends View {
     private static final String STATE_MARK = "mark";
     private static final String STATE_MAX = "max";
 
-    private final int DEFAULT_STAR_POINT = 0;
+    private final int DEFAULT_START_POINT = 0;
     private final int DEFAULT_STROKE_COLOR = Color.parseColor("#999999");
     private final float DEFAULT_STROKE_WIDTH;
     private final float DEFAULT_BG_RING_WIDTH;
@@ -70,7 +70,7 @@ public class MarkView extends View {
     private float mBgRingWidth;
     private int mMark = 0;
     private int mMax = DEFAULT_MAX;
-    private int startPoint;
+    private int mStartPoint;
 
     private RectF mOuterRect = new RectF();
 
@@ -115,7 +115,7 @@ public class MarkView extends View {
 
         mTextColor = attributes.getColor(R.styleable.MarkView_mv_textColor, DEFAULT_TEXT_COLOR);
         mTextSize = attributes.getDimension(R.styleable.MarkView_mv_textSize, DEFAULT_TEXT_SIZE);
-        startPoint = attributes.getInt(R.styleable.MarkView_mv_startPoint, DEFAULT_STAR_POINT);
+        mStartPoint = attributes.getInt(R.styleable.MarkView_mv_startPoint, DEFAULT_START_POINT);
 
 
         setMax(attributes.getInt(R.styleable.MarkView_mv_max, DEFAULT_MAX));
@@ -184,7 +184,7 @@ public class MarkView extends View {
         float innerCircleRadius = (getWidth() - mStrokeWidth) / 2f;
         canvas.drawCircle(getWidth() / 2f, getHeight() / 2f, innerCircleRadius, mInnerCirclePaint);
         canvas.drawArc(mOuterRect, 0, 360f, false, mBgRingPaint);
-        canvas.drawArc(mOuterRect, startPoint, getMarkAngle(), false, mPaint);
+        canvas.drawArc(mOuterRect, mStartPoint, getMarkAngle(), false, mPaint);
 
         String text = isMarkValid(mMark) ? String.valueOf(mMark) : "?";
         if (!TextUtils.isEmpty(text)) {

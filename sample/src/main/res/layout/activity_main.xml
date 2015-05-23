@@ -17,9 +17,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="36dp"
             android:layout_marginTop="36dp"
-            app:mv_mark="1"
+            app:mv_mark="3"
             app:mv_max="5"
-            app:mv_startPoint="TOP"
+            app:mv_startPoint="top"
             app:mv_ringWidth="12dp"
             app:mv_strokeWidth="12dp"
             app:mv_textSize="48sp" />

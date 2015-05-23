@@ -25,5 +25,11 @@
         <attr name="mv_textSize" format="dimension" />
         <attr name="mv_mark" format="integer" />
         <attr name="mv_max" format="integer" />
+        <attr name="mv_startPoint" format="enum">
+            <enum name="TOP" value="270" />
+            <enum name="RIGHT" value="0" />
+            <enum name="BOTTOM" value="90" />
+            <enum name="LEFT" value="180" />
+        </attr>
     </declare-styleable>
 </resources>

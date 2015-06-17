@@ -9,7 +9,7 @@ An android custom view that displays a circle with a colored arc given a mark.
 #Usage
 ###Add as a dependency
 ```groovy
-    compile 'com.github.xiprox.markview:library:1.0.0'
+    compile 'com.github.xiprox.markview:library:1.+'
 ```
 
 ###Get/Set mark

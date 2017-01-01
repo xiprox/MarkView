@@ -58,6 +58,18 @@ Max defines the highest mark value MarkView accepts and understands. Arc degree 
     app:mv_textColor="color"
 ```
 
+###Get/Set central text
+Displays mark if not set or null
+```java
+    getText()
+```
+```java
+    setText(String)
+```
+```xml
+    app:mv_text="string"
+```
+
 ###Get/Set stroke width
 ```java
     getStrokeWidth()

@@ -21,6 +21,7 @@
         <attr name="mv_strokeColors" format="reference" />
         <attr name="mv_ringColor" format="color" />
         <attr name="mv_ringWidth" format="dimension" />
+        <attr name="mv_text" format="string" />
         <attr name="mv_textColor" format="color" />
         <attr name="mv_textSize" format="dimension" />
         <attr name="mv_mark" format="integer" />

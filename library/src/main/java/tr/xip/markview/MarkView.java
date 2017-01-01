@@ -46,6 +46,7 @@ public class MarkView extends View {
     private static final String STATE_STROKE_WIDTH = "stroke_width";
     private static final String STATE_MARK = "mark";
     private static final String STATE_MAX = "max";
+    private static final String STATE_TEXT = "text";
 
     private final int DEFAULT_START_POINT = 0;
     private final int DEFAULT_STROKE_COLOR = Color.parseColor("#999999");
@@ -64,6 +65,7 @@ public class MarkView extends View {
 
     private float mTextSize;
     private int mTextColor;
+    private String mText;
     private int[] mStrokeColors;
     private float mStrokeWidth;
     private int mBgRingColor;
@@ -186,7 +188,12 @@ public class MarkView extends View {
         canvas.drawArc(mOuterRect, 0, 360f, false, mBgRingPaint);
         canvas.drawArc(mOuterRect, mStartPoint, getMarkAngle(), false, mPaint);
 
-        String text = isMarkValid(mMark) ? String.valueOf(mMark) : "?";
+        String text;
+        if(mText == null) {
+            text = isMarkValid(mMark) ? String.valueOf(mMark) : "?";
+        }else{
+            text = mText;
+        }
         if (!TextUtils.isEmpty(text)) {
             float textHeight = mTextPaint.descent() + mTextPaint.ascent();
             canvas.drawText(text, (getWidth() - mTextPaint.measureText(text)) / 2.0f, (getWidth() - textHeight) / 2.0f, mTextPaint);
@@ -197,6 +204,7 @@ public class MarkView extends View {
     protected Parcelable onSaveInstanceState() {
         final Bundle bundle = new Bundle();
         bundle.putParcelable(STATE_STATE, super.onSaveInstanceState());
+        bundle.putString(STATE_TEXT, getText());
         bundle.putInt(STATE_TEXT_COLOR, getTextColor());
         bundle.putFloat(STATE_TEXT_SIZE, getTextSize());
         bundle.putIntArray(STATE_STROKE_COLORS, getStrokeColors());
@@ -210,6 +218,7 @@ public class MarkView extends View {
     protected void onRestoreInstanceState(Parcelable state) {
         if (state instanceof Bundle) {
             final Bundle bundle = (Bundle) state;
+            mText = bundle.getString(STATE_TEXT);
             mTextColor = bundle.getInt(STATE_TEXT_COLOR);
             mTextSize = bundle.getFloat(STATE_TEXT_SIZE);
             mStrokeColors = bundle.getIntArray(STATE_STROKE_COLORS);
@@ -294,6 +303,21 @@ public class MarkView extends View {
      */
     public void setTextSize(float textSize) {
         mTextSize = textSize;
+        invalidate();
+    }
+
+    /**
+    * Returns the central text
+     */
+    public String getText() {
+        return mText;
+    }
+
+    /**
+     * Sets the central text
+     */
+    public void setText(String text){
+        mText = text;
         invalidate();
     }
 

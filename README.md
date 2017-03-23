@@ -6,13 +6,13 @@ An android custom view that displays a circle with a colored arc given a mark.
 <img src="http://puu.sh/hJkWQ/7f2598cb62.png" />
 </p>
 
-#Usage
-###Add as a dependency
+# Usage
+### Add as a dependency
 ```groovy
     compile 'com.github.xiprox.markview:library:1.+'
 ```
 
-###Get/Set mark
+### Get/Set mark
 ```java
     getMark()
 ```
@@ -23,7 +23,7 @@ An android custom view that displays a circle with a colored arc given a mark.
     app:mv_mark="integer"
 ```
 
-###Get/Set max
+### Get/Set max
 Max defines the highest mark value MarkView accepts and understands. Arc degree calculation is done with regard to this maximum value too. Any given mark higher than the max will result in a `?` being displayed along with a full gray ring.
 
 ```java
@@ -36,7 +36,7 @@ Max defines the highest mark value MarkView accepts and understands. Arc degree 
     app:mv_max="integer"
 ```
 
-###Get/Set text size
+### Get/Set text size
 ```java
     getTextSize()
 ```
@@ -47,7 +47,7 @@ Max defines the highest mark value MarkView accepts and understands. Arc degree 
     app:mv_textSize="dimension"
 ```
 
-###Get/Set text color
+### Get/Set text color
 ```java
     getTextColor()
 ```
@@ -58,7 +58,7 @@ Max defines the highest mark value MarkView accepts and understands. Arc degree 
     app:mv_textColor="color"
 ```
 
-###Get/Set stroke width
+### Get/Set stroke width
 ```java
     getStrokeWidth()
 ```
@@ -69,7 +69,7 @@ Max defines the highest mark value MarkView accepts and understands. Arc degree 
     app:mv_strokeWidth="dimension"
 ```
 
-###Get/Set stroke colors
+### Get/Set stroke colors
 MarkView supports different colors for different marks. It works in the following way:
 An array keeps all the colors. Ideally, one for every supported mark (satisfying `array.length == max`). If a color exists in the array for a given mark, that color is used. If not, the last color in the array is used. And if there are no colors at all, the default color (`#999999`) is used.
 
@@ -94,12 +94,12 @@ An array keeps all the colors. Ideally, one for every supported mark (satisfying
 </string-array>
 ```
 
-###Get the current stroke color
+### Get the current stroke color
 ```java
     getStrokeColor()
 ```
 
-###Get/Set ring width
+### Get/Set ring width
 ```java
     getRingWidth()
 ```
@@ -110,7 +110,7 @@ An array keeps all the colors. Ideally, one for every supported mark (satisfying
     app:mv_ringWidth="dimension"
 ```
 
-###Get/Set ring color
+### Get/Set ring color
 ```java
     getRingColor()
 ```
@@ -121,7 +121,7 @@ An array keeps all the colors. Ideally, one for every supported mark (satisfying
    app:mv_ringColor="color"
 ```
 
-#Sample App
+# Sample App
 <a href="https://play.google.com/store/apps/details?id=tr.xip.markview.sample">
 <img alt="Get it on Google Play"
 src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
@@ -129,7 +129,7 @@ src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 
 (Apk file available in the <a href="https://github.com/xiprox/MarkView/releases">releases tab</a>.)
 
-#License
+# License
 ```
 Copyright (C) 2015 Ihsan Isik
 
